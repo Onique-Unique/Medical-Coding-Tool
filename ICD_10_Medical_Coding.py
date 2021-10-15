@@ -61,7 +61,7 @@ while True:
                     else:
                         print(code, "is not billable")
             else:
-                print("Keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
+                print("If keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
                 Choice = int(input())
                 if Choice == 1:
 
