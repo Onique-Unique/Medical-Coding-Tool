@@ -55,7 +55,7 @@ while True:
                 if Description in value:
                     print(key)
                     
-                    code = key
+                    code = icd10.find(key)
                     if code.billable:
                         print(code, "is billable")
                     else:
