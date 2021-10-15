@@ -24,7 +24,7 @@ Data = {"Z00.00": " Encntr for general adult medical exam w/o abnormal findings"
 "J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified"}
 
 while True:
-    print("Select 1 for Code Description, 2 to find Code by description in local Database, 3 to update Database or 0 to exit")
+    print("Select 1 for Code Description, 2 to find Code by description, 3 to update Database or 0 to exit")
     Press = int(input())
     for Choice in range(1):
         
@@ -48,7 +48,7 @@ while True:
                 print(code, "is not billable")
 
         if Press == 2:
-            print("Enter Key Phrase/ Description in Local Database: EG - Cholera")
+            print("Enter Key Phrase/ Description: EG - Cholera")
 
             Description = str(input())
             for key, value in Data.items():
@@ -62,11 +62,11 @@ while True:
                         print(code, "is not billable")
             else:
                 print("Keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
-                Online_Search = int(input())
-                if Online_Search == 1:
+                Choice = int(input())
+                if Choice == 1:
 
                     web = webdriver.Chrome()
-                    web.get("https://icd.who.int/browse10/2019/en")
+                    web.get("https://icd.who.int/browse10/2019/en") #browser containing all updated ICD-10 Codes with Description.
                     
                     time.sleep(1)
                             
@@ -89,7 +89,7 @@ while True:
 
                     Close = web.find_element_by_xpath('/html/body/div[8]/div[1]/button/span[1]')
                     Close.click()
-                elif Online_Search == 2:
+                elif Choice == 2:
                     break
                 
                 else:
