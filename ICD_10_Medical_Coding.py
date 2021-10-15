@@ -50,9 +50,9 @@ while True:
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
 
-            Description = str(input())
+            Description = str(input()).lower()
             for key, value in Data.items():
-                if Description in value:
+                if Description in value.lower():
                     print(key)
 
                     code = icd10.find(key)
