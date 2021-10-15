@@ -24,7 +24,7 @@ Data = {"Z00.00": " Encntr for general adult medical exam w/o abnormal findings"
 "J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified"}
 
 while True:
-    print("Select 1 for Code Description, 2 to find Code by description, 3 to update Database or 0 to exit")
+    print("Select 1 for Code Description, 2 to find Code by description in local Database, 3 to update Database or 0 to exit")
     Press = int(input())
     for Choice in range(1):
         
@@ -48,54 +48,52 @@ while True:
                 print(code, "is not billable")
 
         if Press == 2:
-            print("Enter Key Phrase/ Description: EG - Cholera")
+            print("Enter Key Phrase/ Description in Local Database: EG - Cholera")
 
             Description = str(input())
             for key, value in Data.items():
                 if Description in value:
                     print(key)
-                    
+
                     code = icd10.find(key)
                     if code.billable:
                         print(code, "is billable")
                     else:
                         print(code, "is not billable")
+            else:
+                print("Keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
+                Online_Search = int(input())
+                if Online_Search == 1:
 
-                elif Description not in value:
-                    print("Keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
-                    Online_Search = int(input())
-                    if Online_Search == 1:
-
-                        web = webdriver.Chrome()
-                        web.get("https://icd.who.int/browse10/2019/en")
-                        
-                        time.sleep(1)
-                                
-                        Search = web.find_element_by_xpath('//*[@id="advancedSearchButton"]')
-                        Search.click()
-
-                        time.sleep(1)
-
-                        Search1 = web.find_element_by_xpath('//*[@id="Search_Definition"]')
-                        Search1.click()
-
-                        time.sleep(1)
-
-                        SearchIndex = Description
-                        insert = web.find_element_by_xpath('//*[@id="SearchText"]')
-                        insert.send_keys(SearchIndex)
-
-                        submitButton = web.find_element_by_xpath('/html/body/div[8]/div[3]/div/button/span')
-                        submitButton.click()
-
-                        Close = web.find_element_by_xpath('/html/body/div[8]/div[1]/button/span[1]')
-                        Close.click()
-                    elif Online_Search == 2:
-                        break
+                    web = webdriver.Chrome()
+                    web.get("https://icd.who.int/browse10/2019/en")
                     
-                    else:
-                        print("Selection Does Not Exist")
+                    time.sleep(1)
+                            
+                    Search = web.find_element_by_xpath('//*[@id="advancedSearchButton"]')
+                    Search.click()
 
+                    time.sleep(1)
+
+                    Search1 = web.find_element_by_xpath('//*[@id="Search_Definition"]')
+                    Search1.click()
+
+                    time.sleep(1)
+
+                    SearchIndex = Description
+                    insert = web.find_element_by_xpath('//*[@id="SearchText"]')
+                    insert.send_keys(SearchIndex)
+
+                    submitButton = web.find_element_by_xpath('/html/body/div[8]/div[3]/div/button/span')
+                    submitButton.click()
+
+                    Close = web.find_element_by_xpath('/html/body/div[8]/div[1]/button/span[1]')
+                    Close.click()
+                elif Online_Search == 2:
+                    break
+                
+                else:
+                    print("Selection Does Not Exist")
 
         if Press == 3:
             print("Enter ICD-10 Code: include decimal points if any")
