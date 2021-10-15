@@ -24,7 +24,7 @@ Data = {"Z00.00": " Encntr for general adult medical exam w/o abnormal findings"
 "J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified"}
 
 while True:
-    print("Select 1 for Code Description, 2 to find Code by description, 3 to update Database or 0 to exit")
+    print("Select 1 for Code Description, 2 to find Code by description, 3 to update local Database or 0 to exit")
     Press = int(input())
     for Choice in range(1):
         
