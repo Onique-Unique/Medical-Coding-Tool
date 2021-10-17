@@ -10,7 +10,7 @@ Welcome To ICD-10 Code Finder for Medical Coders
 
 # This program has the following:
 
-#### A Local ICD-10 Dictionary/ Database with the most common diagnosis stored in a data vairiable
+#### A Local ICD-10 Dictionary/ Database with the most common diagnosis stored in a data variable
 #### Ability to lookup a Diagnosis by its ICD-10 Code
 #### Ability to lookup ICD-10 Code by its Description
 #### Ability to identify if an ICD-10 Code is Billable
