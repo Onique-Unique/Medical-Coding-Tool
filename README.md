@@ -8,6 +8,9 @@ Welcome To ICD-10 Code Finder for Medical Coders
 <img width="671" alt="ICD-10 Code Search" src="https://user-images.githubusercontent.com/87822768/137639924-66f30125-ecb2-4953-9e9e-c2303226a6f3.PNG">
 #### Find ICD-10 Code by Description
 #### Get Confirmation if a Medical Code/ Description is Billabe
+#### Access Web ICD-10 information using Selenium Automation
+<img width="673" alt="ICD-10 Selenium" src="https://user-images.githubusercontent.com/87822768/137639981-cbf42e24-34fc-4c86-a8f4-de20dd85f8a7.PNG">
+<img width="772" alt="ICD-10 Web Search" src="https://user-images.githubusercontent.com/87822768/137639962-967d6a5e-9b82-47dd-b02f-4af44658447b.PNG">
 
 # This program has the following:
 
@@ -17,6 +20,5 @@ Welcome To ICD-10 Code Finder for Medical Coders
 #### Ability to identify if an ICD-10 Code is Billable
 #### Ability to update the local Database with new ICD-10 Codes and its Description
 #### Ability to outsource an ICD-10 Code Description via an Automated web browser using Selenium
-<img width="673" alt="ICD-10 Selenium" src="https://user-images.githubusercontent.com/87822768/137639981-cbf42e24-34fc-4c86-a8f4-de20dd85f8a7.PNG">
 
 ## Using this program you will be able to find accurate ICD-10 Codes improving quality and Speed of work completion.
