@@ -5,6 +5,7 @@ Welcome To ICD-10 Code Finder for Medical Coders
 # Within this program you will be able to:
 
 #### Find ICD-10 Description by Code
+<img width="671" alt="ICD-10 Code Search" src="https://user-images.githubusercontent.com/87822768/137639924-66f30125-ecb2-4953-9e9e-c2303226a6f3.PNG">
 #### Find ICD-10 Code by Description
 #### Get Confirmation if a Medical Code/ Description is Billabe
 
