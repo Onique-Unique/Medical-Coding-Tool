@@ -47,17 +47,20 @@ while True:
             
             Find_ICD10 = icd10.chapters
             
-            if Search_ICD10 in Find_ICD10:
+            for Search_ICD10 in Find_ICD10[:1]:
+                if Search_ICD10 in Find_ICD10:
 
-                print(code.description)
-            
-                if code.billable:
-                    print(code, "is billable")
-                else:
-                    print(code, "is not billable")
-            
-            else:
-                print("Code - " + Search_ICD10 + " is Invalid/ Not Found")
+                    try:
+
+                        print(code.description)
+
+                        if code.billable:
+                            print(code, "is billable")
+                        else:
+                            print(code, "is not billable")
+
+                    except AttributeError:
+                        print("Code - " + Alphabet + str(Digit) + " is Invalid/ Not Found")
 
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
