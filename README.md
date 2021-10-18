@@ -28,4 +28,4 @@ Welcome To ICD-10 Code Finder for Medical Coders
 #### Ability to update the local Database with new ICD-10 Codes and its Description
 #### Ability to outsource an ICD-10 Code Description via an Automated web browser using Selenium
 
-## Using this program you will be able to find accurate ICD-10 Codes improving quality and Speed of work completion.
+## Using this program you will be able to find accurate ICD-10 Codes its Billing status and Descriptions improving quality and Speed of work completion.
