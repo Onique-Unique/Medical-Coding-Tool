@@ -40,13 +40,24 @@ while True:
             print("Find Description By Entering the 2 digit Number including decimal points if any")
 
             Digit = input()
+            
+            Search_ICD10 = Alphabet + str(Digit)
 
             code = icd10.find(Alphabet + str(Digit))
-            print(code.description)
-            if code.billable:
-                print(code, "is billable")
+            
+            Find_ICD10 = icd10.chapters
+            
+            if Search_ICD10 in Find_ICD10:
+
+                print(code.description)
+            
+                if code.billable:
+                    print(code, "is billable")
+                else:
+                    print(code, "is not billable")
+            
             else:
-                print(code, "is not billable")
+                print("Code is Invalid/ Not Found")
 
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
