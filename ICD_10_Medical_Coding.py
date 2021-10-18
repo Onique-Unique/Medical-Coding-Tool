@@ -35,7 +35,7 @@ while True:
         if Press == 1:
             print("Enter Single Alphabet: A - Z")
 
-            Alphabet = str(input())
+            Alphabet = str(input()).upper()
 
             print("Find Description By Entering the 2 digit Number including decimal points if any")
 
