@@ -57,7 +57,7 @@ while True:
                     print(code, "is not billable")
             
             else:
-                print("Code is Invalid/ Not Found")
+                print("Code - " + Search_ICD10 + " is Invalid/ Not Found")
 
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
