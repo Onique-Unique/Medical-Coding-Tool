@@ -89,13 +89,22 @@ while True:
             Description = str(input()).lower()
             for key, value in Data.items():
                 if Description in value.lower():
-                    print(key)
 
-                    code = icd10.find(key)
-                    if code.billable:
-                        print(code, "is billable")
-                    else:
-                        print(code, "is not billable")
+                    try:
+
+                        print(key)
+                        print(value)
+
+                        code = icd10.find(key)
+                        if code.billable:
+                            print(code, "is billable")
+                        else:
+                            print(code, "is not billable")
+
+                    except AttributeError:
+                        print("No Billing Information Was Found For: " + Description.upper())
+                        print("This May be caused by Newly Updated ICD10 version")
+                        print()
             else:
                 print("If keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
                 Choice = int(input())
