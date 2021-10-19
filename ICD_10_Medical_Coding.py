@@ -24,7 +24,10 @@ Data = {"Z00.00": " Encntr for general adult medical exam w/o abnormal findings"
 "J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified", "S14.0" : "Concussion and edema of cervical spinal cord", "D57.3": "Sickle-cell trait", "U07.1": "COVID-19, virus identified",
 "U07.2": "COVID-19, virus not identified"}
 
+print("-" * 48)
 print("Welcome To ICD-10 Code Finder for Medical Coders")
+print("-" * 48)
+print()
 while True:
     print("Select 1 for Code Description, 2 to find Code by description, 3 to update local Database or 0 to stop program")
     Press = int(input())
@@ -52,7 +55,7 @@ while True:
                 if Search_ICD10 in Find_ICD10:
 
                     try:
-
+                        
                         print(code.description)
 
                         if code.billable:
@@ -61,10 +64,11 @@ while True:
                             print(code, "is not billable")
 
                     except AttributeError:
+                        print("-" * 80)
                         print("Code - " + Alphabet + str(Digit) + " is Invalid/ Not Found") 
                         print()
                         print("Input was not found in module: Press 1 to view local Database or 2 for Main Menu")
-
+                        print("-" * 80)
                         Choice = int(input())
                         if Choice == 1:
                             continue
@@ -76,13 +80,16 @@ while True:
                     if Search_code in key:
                         print(Search_code)
                         print(value)
+                        print("-" * 29)
                         print("Input Found in local Database")
+                        print("-" * 29)
                         break
 
                 else:
                     if Search_code not in key:
-                        print("Input was not found in local Database")
-
+                        print("-" * 93)
+                        print("Input was not found in local Database: If input is valid please update/ add to local Database")
+                        print("-" * 93)
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
 
@@ -106,7 +113,10 @@ while True:
                         print("This May be caused by Newly Updated ICD10 version")
                         print()
             else:
+                print("-" * 93)
                 print("If keyphrase is not found in local Database: Press 1 for results from Web or 2 for Main Menu.")
+                print("-" * 93)
+
                 Choice = int(input())
                 if Choice == 1:
 
@@ -138,16 +148,20 @@ while True:
                     break
                 
                 else:
+                    print("-" * 24)
                     print("Selection Does Not Exist")
+                    print("-" * 24)
 
         if Press == 3:
             print("Enter ICD-10 Code: include decimal points if any")
-            ICD_10_Code = str(input())
+            ICD_10_Code = str(input()).upper()
             print("Enter Description: Ensure to insert accurate ICD-10 Guideline Description")
             ICD_10_Description = str(input())
             Data.update({ICD_10_Code : ICD_10_Description})
             print(list(Data)[-1])
+            print("-" * 16)
             print("Database Updated")
+            print("-" * 16)
 
 
             
