@@ -21,7 +21,8 @@ Data = {"Z00.00": " Encntr for general adult medical exam w/o abnormal findings"
 "R42": "Dizziness and giddiness", "Z01.411": "Encntr for gyn exam (general) (routine) w abnormal findings", "Z01.419": "Encntr for gyn exam (general) (routine) w/o abn findings", "Z34.80": "Encounter for suprvsn of normal pregnancy, unsp trimester", "Z34.90": "Encntr for suprvsn of normal pregnancy, unsp, unsp trimester",
 "D50.9": "Iron deficiency anemia, unspecified", "F41.9": "Anxiety disorder, unspecified", "L03.90": "Cellulitis, unspecified", "L03.91": "Acute lymphangitis, unspecified", "R10.84": "Generalized abdominal pain", "M25.50": "Pain in unspecified joint", "R35.0 ": "Frequency of micturition", "G44.1": "Vascular headache, not elsewhere classified",
 "R51": "Headache", "R63.5": "Abnormal weight gain", "E11.40": "Type 2 diabetes mellitus with diabetic neuropathy, unsp", "J44.9": "Chronic obstructive pulmonary disease, unspecified", "I50.9": "Heart failure, unspecified", "R31.9": "Hematuria, unspecified", "R73.09": "Other abnormal glucose", "M12.9": "Arthropathy, unspecified", "E87.6": "Hypokalemia",
-"J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified", "S14.0" : "Concussion and edema of cervical spinal cord", "D57.3": "Sickle-cell trait"}
+"J02.9": "Acute pharyngitis, unspecified", "E11.29": "Type 2 diabetes mellitus w oth diabetic kidney complication", "E01.2": "Iodinedeficiency related (endemic) goiter, unspecified", "E04.9": "Nontoxic goiter, unspecified", "S14.0" : "Concussion and edema of cervical spinal cord", "D57.3": "Sickle-cell trait", "U07.1": "COVID-19, virus identified",
+"U07.2": "COVID-19, virus not identified"}
 
 print("Welcome To ICD-10 Code Finder for Medical Coders")
 while True:
@@ -42,7 +43,7 @@ while True:
             Digit = input()
             
             Search_ICD10 = Alphabet + str(Digit)
-
+            Search_code = Search_ICD10
             code = icd10.find(Alphabet + str(Digit))
             
             Find_ICD10 = icd10.chapters
@@ -60,7 +61,27 @@ while True:
                             print(code, "is not billable")
 
                     except AttributeError:
-                        print("Code - " + Alphabet + str(Digit) + " is Invalid/ Not Found")
+                        print("Code - " + Alphabet + str(Digit) + " is Invalid/ Not Found") 
+                        print()
+                        print("Input was not found in module: Press 1 to view local Database or 2 for Main Menu")
+
+                        Choice = int(input())
+                        if Choice == 1:
+                            continue
+
+                        elif Choice == 2:
+                            break
+            else:
+                for key, value in Data.items():
+                    if Search_code in key:
+                        print(Search_code)
+                        print(value)
+                        print("Input Found in local Database")
+                        break
+
+                else:
+                    if Search_code not in key:
+                        print("Input was not found in local Database")
 
         if Press == 2:
             print("Enter Key Phrase/ Description: EG - Cholera")
